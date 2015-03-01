@@ -1,0 +1,43 @@
+{
+  "name": "interlace",
+  "version": "0.0.1",
+  "description": "include() directive for Javascript",
+  "main": "interlace.js",
+  "scripts": {
+    "start": "coffee -c *.coffee && uglifyjs interlace.js > interlace.min.js",
+    "debug": "echo \"Run node-inspector & for debugging!\" && coffee -c *.coffee && node --debug-brk test.js",
+    "test": "npm start && node test.js | faucet",
+    "coverage": "npm start && istanbul cover test.js",
+    "coveralls": "npm start && istanbul cover test.js --report lcovonly && cat ./coverage/lcov.info | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lo5/interlace.git"
+  },
+  "keywords": [
+    "javscript",
+    "language-extension",
+    "require",
+    "import",
+    "using"
+  ],
+  "author": "Prithvi Prabhu <prithvi.prabhu@gmail.com> (http://lofi.in/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lo5/interlace/issues"
+  },
+  "homepage": "https://github.com/lo5/interlace",
+  "devDependencies": {
+    "coffee-script": "^1.9.1",
+    "coveralls": "^2.11.2",
+    "faucet": "0.0.1",
+    "istanbul": "^0.3.6",
+    "tape": "^3.5.0",
+    "uglify-js": "^2.4.16"
+  },
+  "dependencies": {
+    "escodegen": "^1.6.1",
+    "esprima": "^2.0.0",
+    "lodash": "^3.3.1"
+  }
+}
